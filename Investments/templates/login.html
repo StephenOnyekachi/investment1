@@ -1,0 +1,85 @@
+
+{% extends 'base.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <!-- <img src="styles/img/1.jpg" alt=""> -->
+        <video src="{% static 'styles/img/v1.mp4' %}" loop autoplay></video>
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-6">
+                <div class="col-md-12 p-3 outline-light">
+                    <div class="text-center">
+                        <h3 class="text-light">
+                            Sign Up
+                        </h3>
+                        <p class="text-light">
+                            I Do not Have Account 
+                            <a href="{% url 'signup' %}">
+                                Join Us
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-2 bg-primary p-3">
+                            <a href="index.html" class="text-light">
+                                <i class="fa fa-arrow-back"></i>
+                                <span>Go Back</span>
+                            </a>
+                        </div>
+                    </div>
+                    {% for message in messages %}
+                    <div class="col-md-12 m-3">
+                        <div class="col-md-12 alert-warning p-3 text-center">
+                            <p>{{message}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-6 text-left">
+                <div class="footer p-3">
+                    <div class="col-md-12 bg-dark p-3">
+                        <div class="">
+                            <div class="">
+                                <h3 class="text-center text-capitalize text-light">
+                                    Log In
+                                </h3>
+                                <p class="text-center text-capitalize text-light">
+                                    log in to view your dashboard
+                                </p>
+                                <div class="col-md-12">
+                                    <!-- <form action="dashboard.html" method="post" enctype="multipart/form-data"> -->
+                                    <form action="" method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div>
+                                            <p class="text-muted">User Name:</p>
+                                            <input type="text" placeholder="Enter User Name" name="name" class="form-control">
+                                        </div>
+                                        <div>
+                                            <p class="text-muted">Password:</p>
+                                            <input type="password" placeholder="xxxxxxxxxx" name="password" class="form-control">
+                                        </div>
+                                        <div class="m-3">
+                                            <button class="btn btn-primary">Log In</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center text-muted">
+                            <span>&copy; site name 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

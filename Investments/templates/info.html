@@ -1,0 +1,75 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <!-- <img src="styles/img/1.jpg" alt=""> -->
+        <video src="{% static 'styles/img/v1.mp4' %}" loop autoplay></video>
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="col-md-12 text-left">
+                <div class="footer p-3">
+                    <div class="col-md-12 bg-dark p-3">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="col-md-12">
+                                <div class="">
+                                    <h3 class="text-center text-capitalize text-light">
+                                        Payment Details
+                                    </h3>
+                                    <div class="col-md-12">
+                                        <div class="col-md-12 p-3">
+                                            <p class="text-muted col-md-12">Bank Name:</p>
+                                            <input type="text" value="{{user.bank_name}}" placeholder="Enter your bank name" name="bank" class="form-control">
+                                        </div>
+                                        <div class="col-md-12 p-3">
+                                            <p class="text-muted col-md-12">Bank Account:</p>
+                                            <input type="text" value="{{user.bank_number}}" placeholder="Enter your bank" name="account" class="form-control">
+                                        </div>
+                                        <div class="col-md-12 p-3">
+                                            <p class="text-muted col-md-12">Holder Name:</p>
+                                            <input type="text" value="{{user.bank}}" placeholder="Enter your bank" name="name" class="form-control">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <p class="text-muted col-md-12">Account Type:</p>
+                                            <input type="text" value="{{user.type}}" placeholder="Your type" name="type" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <!-- <div class="">
+                                    <h3 class="text-center text-capitalize text-light">
+                                        Set Fund Pin
+                                    </h3>
+                                    <div class="col-md-12">
+                                        <div class="col-md-12 p-3">
+                                            <p class="text-muted col-md-12">Current Pin/ New Pin:</p>
+                                            <input type="password" value="{{user.pin}}" placeholder="Enter Pin" name="pin1" class="form-control">
+                                        </div>
+                                        <div class="col-md-12 p-3">
+                                            <p class="text-muted col-md-12">Confirm Pin:</p>
+                                            <input type="text" value="{{user.pin}}" placeholder="Confirm Pin" name="pin2" class="form-control">
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="col-md-12 p-3 text-center">
+                                <div class="col-md-12 p-3">
+                                    <button class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

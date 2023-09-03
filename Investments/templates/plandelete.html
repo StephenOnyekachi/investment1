@@ -1,0 +1,57 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-12 bg-dark">
+                <h3 class="text-light text-capitalize text-center">
+                    Delete This Plan
+                </h3>
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <span class="text-capitalize text-warning">Plan Name</span>
+                            <p class="text-capitalize text-light">
+                                {{user.name}}
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="text-capitalize text-warning">Plan Price</span>
+                            <p class="text-capitalize text-light">
+                                {{user.price}}
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="text-capitalize text-warning">Plan Parcentage</span>
+                            <p class="text-capitalize text-light">
+                                {{user.parcentage}}
+                            </p>
+                        </div>
+                        <div class="col-md-3 withdraw">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <span class="text-capitalize text-warning">Delete User</span>
+                                <p class="text-capitalize text-light">
+                                    Are you Sure of deleting this user
+                                </p>
+                                <div class="col-md-12 text-left">
+                                    <button class="btn btn-primary">Yes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-12 bg-dark">
+                <h3 class="text-light text-capitalize text-center">
+                    Histories
+                </h3>
+                <div class="col-md-12 p-3">
+                    <table class="table">
+                        <thead>
+                          <tr class="alert-warning">
+                            <th scope="col" class="text-center text-dark">Amount</th>
+                            <th scope="col" class="text-center text-dark">Status</th>
+                            <th scope="col" class="text-center text-dark">Date</th>
+                            <th scope="col" class="text-center text-dark">
+                              {% if request.user.is_superuser %}
+                                Approve
+                              {% endif %}
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for history in history %}
+                          <tr>
+                            <td class="text-center text-light">{{history.amount}}</td>
+                            <td class="text-center text-light">{{history.status}}</td>
+                            <td class="text-center text-light">{{history.time}}</td>
+                            <td class="text-center text-light">
+                              {% if request.user.is_superuser %}
+                                <a href="{% url 'approve' history.id %}" class="btn btn-primary">Approve</a>
+                              {% endif %}
+                            </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}

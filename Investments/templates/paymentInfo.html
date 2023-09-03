@@ -1,0 +1,71 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <!-- <img src="styles/img/1.jpg" alt=""> -->
+        <video src="{% static 'styles/img/v1.mp4' %}" loop autoplay></video>
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-6">
+                <div class="col-md-12 p-3 outline-light">
+                    <div class="text-center">
+                        <h3 class="text-light">
+                            Upgrade To
+                        </h3>
+                        <p class="text-light">
+                            Level: {{plan.name}}
+                        </p>
+                        <p class="text-light">
+                            Price: {{plan.price}}
+                        </p>
+                        <p class="text-light">
+                            Parcentage: {{plan.parcentage}}%
+                        </p>
+                    </div>
+                    <h3 class="text-danger text-center">After Payment Contact Customer Care</h3>
+                </div>
+            </div>
+            <div class="col-md-6 text-left">
+                <div class="footer p-3">
+                    <div class="col-md-12 bg-dark p-3">
+                        <div class="">
+                            <div class="">
+                                <h3 class="text-center text-capitalize text-light">
+                                    Payment Details
+                                </h3>
+                                <div class="col-md-12">
+                                    <form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="col-md-12 p-3">
+                                            <p class="text-muted col-md-12">Name:</p>
+                                            <span class="text-muted text-right col-md-12">Stephen Onyekachi</span>
+                                        </div>
+                                        <div class="col-md-12 p-3">
+                                            <p class="text-muted col-md-12">Bank:</p>
+                                            <span class="text-muted text-right col-md-12">Zenith bank</span>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <p class="text-muted col-md-12">Amount:</p>
+                                            <h4 class="text-muted text-right col-md-12">2000</h4>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center text-muted">
+                            <span>&copy; site name 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

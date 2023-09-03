@@ -1,0 +1,57 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-12 bg-dark">
+                <h3 class="text-light text-capitalize text-center">
+                    Informations
+                </h3>
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <span class="text-capitalize text-warning">Amount</span>
+                            <p class="text-capitalize text-light">
+                                {{user.amount}}
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="text-capitalize text-warning">Status</span>
+                            <p class="text-capitalize text-light">
+                                {{user.status}}
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="text-capitalize text-warning">Time</span>
+                            <p class="text-capitalize text-light">
+                                {{user.time}}
+                            </p>
+                        </div>
+                        <div class="col-md-3 withdraw">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <span class="text-capitalize text-warning">Change Status</span>
+                                <div>
+                                    <input type="text" placeholder="Change" name="approve" class="form-control">
+                                </div>
+                                <div class="col-md-12 text-left p-3">
+                                    <button class="btn btn-primary">Change</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}

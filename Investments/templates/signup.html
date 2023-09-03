@@ -1,0 +1,76 @@
+
+{% extends 'base.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <!-- <img src="styles/img/1.jpg" alt=""> -->
+        <video src="{% static 'styles/img/v1.mp4' %}" loop autoplay></video>
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="col-md-12 text-left">
+                <div class="footer">
+                    <div class="col-md-12 bg-dark p-3">
+                        <div class="">
+                            <div class="">
+                                <h3 class="text-center text-capitalize text-light">
+                                    Sign Up
+                                </h3>
+                                <p class="text-center text-capitalize text-light">
+                                    Fill In The empty spacvss
+                                </p>
+                                <div class="col-md-12">
+                                    <!-- <form action="login.html" method="post" enctype="multipart/form-data"> -->
+                                    <form action="" method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="col-md-6">
+                                            <div>
+                                                <p class="text-muted">User Name:</p>
+                                                <input type="text" placeholder="Enter User Name" name="name" class="form-control">
+                                            </div>
+                                            <div>
+                                                <p class="text-muted">Phone Number:</p>
+                                                <input type="text" placeholder="+234 000-0000-0000" name="phone" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div>
+                                                <p class="text-muted">Password:</p>
+                                                <input type="password" placeholder="xxxxxxxxxx" name="password1" class="form-control">
+                                            </div>
+                                            <div>
+                                                <p class="text-muted">Comfirm Password:</p>
+                                                <input type="password" placeholder="xxxxxxxxxx" name="password2" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 p-3">
+                                            <div class="m-3">
+                                                <button class="btn btn-primary">Next</button>
+                                            </div>
+                                        </div>
+                                        {% for message in messages %}
+                                        <div class="col-md-12 m-3">
+                                            <div class="col-md-12 alert-warning p-3 text-center">
+                                                <p>{{message}}</p>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center text-muted">
+                            <span>&copy; site name 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment</title>
+
+    <link rel="stylesheet" href="{% static 'styles/font-awesome/css/font-awesome.min.cs' %}">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css.css' %}">
+    <link rel="icon" href="{% static 'styles/img/1.png' %}">
+
+</head>
+<body>
+    <div class="col-md-12 p-3 menu">
+        <div class="col-md-6 text-light"> 
+            <h3>Site Name</h3>
+        </div>
+        <!-- <div class="bar">
+            <i class="fa fa-bars fa-3x text-light"></i>
+        </div> -->
+        <div class="col-md-6 navbar"> 
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}" class="text-light">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'signup' %}" class="text-light">Sign Up</a>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}" class="text-light">Log In</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="midel">
+
+    </div>
+    <div>
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+
+</body>
+
+
+</html>

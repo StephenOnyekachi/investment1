@@ -1,0 +1,285 @@
+
+{% extends 'base.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <!-- <img src="styles/img/1.jpg" alt=""> -->
+        <video src="{% static 'styles/img/v1.mp4' %}" loop autoplay></video>
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-12">
+                <h3 class="text-light text-capitalize text-center">
+                    Our Investment Plans
+                </h3>
+                <div class="col-md-12 p-3">
+                    {% for plan in plan %}
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <a href="{% url 'payment' plan.id %}">
+                                <div class="text-center alert-info p-3 bg-gradient">
+                                    <h3>{{plan.price}}</h3>
+                                    <h3 class="text-capitalize">{{plan.name}}</h3>
+                                    <span>{{plan.parcentage}}%</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="p-3 col-md-12">
+                    <div class="col-md-12">
+                        <h3 class="text-center text-light">
+                            About Us
+                        </h3>
+                    </div>
+                    <div class="col-md-12 bg-dark p-3">
+                        <div class="col-md-4 text-center">
+                            <i class="fa fa-security"></i>
+                            <h3 class="text-uppercase text-light">
+                                strong security
+                            </h3>
+                            <p class="text-muted">
+                                Protection against DDoS attracks
+                            </p>
+                            <p class="text-muted">
+                                full data encryption
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <i class="fa fa-security"></i>
+                            <h3 class="text-uppercase text-light">
+                                world coverage
+                            </h3>
+                            <p class="text-muted">
+                                providing services in 99% countries
+                            </p>
+                            <p class="text-muted">
+                                arround all the globe
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <i class="fa fa-security"></i>
+                            <h3 class="text-uppercase text-light">
+                                payment options
+                            </h3>
+                            <p class="text-muted">
+                                popular methods: visa, master card,
+                            </p>
+                            <p class="text-muted">
+                                bank transfer, crytocurrency
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <i class="fa fa-security"></i>
+                            <h3 class="text-uppercase text-light">
+                                mobile app
+                            </h3>
+                            <p class="text-muted">
+                                trading via our mobil app, available
+                            </p>
+                            <p class="text-muted">
+                                in play store & app store
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <i class="fa fa-security"></i>
+                            <h3 class="text-uppercase text-light">
+                                cost efficiency
+                            </h3>
+                            <p class="text-muted">
+                                    reasonable trading fees for takers
+                            </p>
+                            <p class="text-muted">
+                                and all market makers
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <i class="fa fa-security"></i>
+                            <h3 class="text-uppercase text-light">
+                                hight liquidity
+                            </h3>
+                            <p class="text-muted">
+                                fast access to high liquidity orderbook
+                            </p>
+                            <p class="text-muted">
+                                for top currency pairs
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 bg-gradient p-3">
+                        <h3 class="text-center text-light">Our Success</h3>
+                        <div class="col-md-4 text-center">
+                            <div class="outline-light">
+                                <i class="fa fa-child fa-2x text-light"></i>
+                                <h3 class="text-uppercase text-light">
+                                    partnership
+                                </h3>
+                                <h1 class="text-light b-3">
+                                    500
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="outline-light">
+                                <i class="fa fa-users fa-2x text-light"></i>
+                                <h3 class="text-uppercase text-light">
+                                    users
+                                </h3>
+                                <h1 class="text-light b-3">
+                                    1000
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="outline-light">
+                                <i class="fa fa-trophy fa-2x text-light"></i>
+                                <h3 class="text-uppercase text-light">
+                                    awarlds
+                                </h3>
+                                <h1 class="text-light b-3">
+                                    10
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <h3 class="text-center text-light">
+                            Our Customers Says
+                        </h3>
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <span class="text-capitalize text-warning">stephen</span>
+                                <p class="text-capitalize text-light">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                                    Vel sunt excepturi eaque necessitatibus.
+                                </p>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="text-capitalize text-warning">stephen</span>
+                                <p class="text-capitalize text-light">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                                    Vel sunt excepturi eaque necessitatibus.
+                                </p>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="text-capitalize text-warning">stephen</span>
+                                <p class="text-capitalize text-light">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                                    Vel sunt excepturi eaque necessitatibus.
+                                </p>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="text-capitalize text-warning">stephen</span>
+                                <p class="text-capitalize text-light">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                                    Vel sunt excepturi eaque necessitatibus.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer p-3">
+        <div class="col-md-12 bg-dark p-3">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <h3 class="text-center text-capitalize text-light">
+                        social
+                    </h3>
+                    <p class="text-center text-capitalize text-light">
+                        follow us on our deffirents socail media for more updates
+                    </p>
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <a href="">
+                                <i class="fa fa-facebook fa-2x text-warning"></i>
+                                <p class="text-light text-capitalize">facebook</p>
+                            </a>
+                        </div>
+                        <div class="text-center">
+                            <a href="">
+                                <i class="fa fa-instagram fa-2x text-warning"></i>
+                                <p class="text-light text-capitalize">instagram</p>
+                            </a>
+                        </div>
+                        <div class="text-center">
+                            <a href="">
+                                <i class="fa fa-twitter fa-2x text-warning"></i>
+                                <p class="text-light text-capitalize">twitter</p>
+                            </a>
+                        </div>
+                        <div class="text-center">
+                            <a href="">
+                                <i class="fa fa-whatsapp fa-2x text-warning"></i>
+                                <p class="text-light text-capitalize">whatsapp</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <h3 class="text-center text-capitalize text-light">
+                            Contact Us
+                        </h3>
+                        <div class="text-center p-3">
+                            <i class="fa fa-phone fa-2x text-warning"></i>
+                            <span class="text-light text-capitalize">whatsapp</span>
+                        </div>
+                        <div class="text-center p-3">
+                            <i class="fa fa-whatsapp fa-2x text-warning"></i>
+                            <span class="text-light text-capitalize">whatsapp</span>
+                        </div>
+                        <div class="text-center p-3">
+                            <i class="fa fa-envelope fa-2x text-warning"></i>
+                            <span class="text-light text-capitalize">Email</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-center text-capitalize text-light">
+                        message
+                    </h3>
+                    <p class="text-center text-capitalize text-light">
+                        message us for more enquaries
+                    </p>
+                    <div class="col-md-12">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <div>
+                                <p class="text-muted">Name:</p>
+                                <input type="text" placeholder="Enter your Name" name="name" class="form-control">
+                            </div>
+                            <div>
+                                <p class="text-muted">Email:</p>
+                                <input type="text" placeholder="Enter your Email" name="email" class="form-control">
+                            </div>
+                            <div>
+                                <p class="text-muted">message:</p>
+                                <textarea name="message" id="" rows="10" class="form-control">
+                                    
+                                </textarea>
+                                <!-- <input type="text" placeholder="Enter your Name" name="name" class="form-control"> -->
+                            </div>
+                            <div class="m-3">
+                                <button class="btn btn-primary">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center text-muted">
+                <span>&copy; site name 2023</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <!-- <img src="styles/img/1.jpg" alt=""> -->
+        <video src="{% static 'styles/img/v1.mp4' %}" loop autoplay></video>
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-12">
+                <h3 class="text-light text-capitalize text-center">
+                    <!-- Our Investment Plans -->
+                </h3>
+                <div class="col-md-12 p-3">
+                    {% for plan in plan %}
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <a href="{% url 'payment' plan.id %}">
+                                <div class="text-center alert-info p-3 bg-gradient">
+                                    <h3>{{plan.price}}</h3>
+                                    <h3 class="text-capitalize">{{plan.name}}</h3>
+                                    <span>{{plan.parcentage}}%</span>
+                                </div>
+                            </a>
+                        </div>
+                        {% if request.user.is_superuser %}
+                        <div class="col-md-12">
+                            <div class="">
+                                <a href="{% url 'planedit' plan.id %}" class="btn btn-primary">Edit</a>
+                                <a href="{% url 'plandelete' plan.id %}" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

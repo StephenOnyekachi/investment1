@@ -1,0 +1,71 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-12 bg-dark">
+                <h3 class="text-light text-capitalize text-center">
+                    Informations
+                </h3>
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <span class="text-capitalize text-warning">User Name</span>
+                            <p class="text-capitalize text-light">
+                                {{user.username}}
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="text-capitalize text-warning">Phone Number</span>
+                            <p class="text-capitalize text-light">
+                                {{user.number}}
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="text-capitalize text-warning">Bank Account</span>
+                            <p class="text-capitalize text-light">
+                                Bank Name: {{user.bank}} <br>
+                                User Name: {{user.bank_name}} <br>
+                                Account Number: {{user.bank_name}} <br>
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="text-capitalize text-warning">Date Joined</span>
+                            <p class="text-capitalize text-light">
+                                {{user.date_joined}}
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="text-capitalize text-warning">Last Seen</span>
+                            <p class="text-capitalize text-light">
+                                {{user.last_login}}
+                            </p>
+                        </div>
+                        <div class="col-md-3 withdraw">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <span class="text-capitalize text-warning">Delete User</span>
+                                <p class="text-capitalize text-light">
+                                    Are you Sure of deleting this user
+                                </p>
+                                <div class="col-md-12 text-left">
+                                    <button class="btn btn-primary">Yes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}

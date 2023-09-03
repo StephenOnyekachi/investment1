@@ -1,0 +1,54 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-12 bg-dark">
+                <h3 class="text-light text-capitalize text-center">
+                    Edit This Plan
+                </h3>
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="col-md-12 withdraw">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <span class="text-capitalize text-warning">Upgrade This User</span>
+                                <div class="col-md-12">
+                                    <div class="col-md-4 p-3">
+                                        <!-- <select class="form-control" name="plan">
+                                            {% for plan in plan %}
+                                            <option value="{{plan.id}}" class="form-control p-3">{{plan.name}}</option>
+                                            {% endfor %}
+                                        </select> -->
+                                        <input type="text" value="{{user.name}}" name="plan" class="form-control">
+                                    </div>
+                                    <div class="col-md-4 p-3">
+                                        <input type="text" value="{{user.price}}" name="price" class="form-control">
+                                    </div>
+                                    <div class="col-md-4 p-3">
+                                        <input type="text" value="{{user.parcentage}}" name="parcent" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-left">
+                                    <button class="btn btn-primary">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}
+

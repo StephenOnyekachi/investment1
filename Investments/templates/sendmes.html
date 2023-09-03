@@ -1,0 +1,62 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-12 bg-dark">
+                <h3 class="text-light text-capitalize text-center">
+                    Send Message
+                </h3>
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <!-- {% if message %}
+                            {% for message in message %}
+                            <div class="col-md-12 text-left">
+                                <div class="outline-light">
+                                    <i class="fa fa-envelope fa-1x text-light text-left"> Name: {{message.name}}, Time: {{message.time}}</i><br>
+                                    <span class="text-warning">{{message.time}}</span><br>
+                                    <p class="text-left text-light">
+                                        {{message.message}}
+                                    </p>
+                                    {% if messag.picture %}
+                                    <img src="{{message.picture.url}}"></img>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                        {% endif %} -->
+                    </div>
+                    <div class="col-md-12 withdraw" style="position: fixed; bottom:0;padding:5px; left: 0; background-color: black;">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="col-md-6 p-3">
+                                <input type="text" placeholder="Type here..." name="message" class="form-control" style="color: white;">
+                            </div>
+                            <div class="col-md-4 text-left">
+                                <input type="file" name="file" id="file" style="display: none;">
+                                <label class="fa fa-camera btn btn-primary" for="file" name="file" style="border-radius: 50%; padding:10px;">
+                                    Add File
+                                </label>
+                                <button class="btn btn-primary" style="border-radius: 50%; padding:10px;">
+                                    <i class="fa fa-comment"> Send</i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,157 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <!-- <img src="styles/img/1.jpg" alt=""> -->
+        <video src="{% static 'styles/img/v1.mp4' %}" loop autoplay></video>
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            {% for message in messages %}
+            <div class="col-md-12 m-3" style="z-index: 100;">
+                <div class="col-md-12 alert-success p-3 text-center">
+                    <p>{{message}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            
+            <div class="mine">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" name="parcent" id="" value="{{request.user.parcent}}" hidden>
+                    <button class="text-center text-light btn btn-success">
+                        <i class="fa fa-cube fa-1x"></i>
+                        <p>Mine</p>
+                    </button>
+                </form>
+            </div>
+
+            <div class="p-3 col-md-12">
+                <h3 class="text-light text-capitalize text-center">
+                    <!-- Our Investment Plans -->
+                </h3>
+                <div class="col-md-12 p-3 bg-dark">
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <div class="text-center alert-warning p-3 bg-gradient">
+                                    <img src="{% static 'styles/img/7.png' %}" alt="">
+                                    <h3>Amount Invested</h3>
+                                    <span>{{user.price}}</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <a href="">
+                                <div class="text-center alert-success p-3 bg-gradient">
+                                    <img src="{% static 'styles/img/1.png' %}" alt="">
+                                    <h3>Daily Income</h3>
+                                    <span>{{user.parcent}}%</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <a href="">
+                                <div class="text-center alert-danger p-3 bg-gradient">
+                                    <img src="{% static 'styles/img/5.png' %}" alt="">
+                                    <h3>Total Money Earn</h3>
+                                    <span>{{user.balance}}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <a href="">
+                                <div class="text-center alert-info p-3 bg-gradient">
+                                    <img src="{% static 'styles/img/6.png' %}" alt="">
+                                    <h3>Current Level</h3>
+                                    <span>{{user.plan}}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mes text-center text-light alert-info">
+                    <a href="{% url 'sms' %}">
+                        <i class="fa fa-commenting-o fa-1x"></i>
+                        <p>Chat</p>
+                    </a>
+                </div>
+                <div class="col-md-12 p-3">
+                    <h3 class="text-light text-capitalize text-center">
+                        Upgrading And User Informations
+                    </h3>
+                </div>
+                <div class="col-md-12 p-3">
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <a href="{% url 'upgrade' %}">
+                                <div class="text-center alert-info p-3 bg-gradient">
+                                    <span class="fa fa-line-chart fa-3x text-dark"></span>
+                                    <h3>Upgrade To</h3>
+                                    <h3>Next Level</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <a href="{% url 'bankinfo' %}">
+                                <div class="text-center alert-warning p-3 bg-gradient">
+                                    <span class="fa fa-credit-card fa-3x text-dark"></span>
+                                    <h3>Add Payment</h3>
+                                    <h3>Info</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <a href="{% url 'userinfo' %}">
+                                <div class="text-center alert-success p-3 bg-gradient">
+                                    <span class="fa fa-commenting-o fa-3x text-dark"></span>
+                                    <h3>User</h3>
+                                    <h3>Infomations</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <a href="{% url 'history' %}">
+                                <div class="text-center alert-danger p-3 bg-gradient">
+                                    <span class="fa fa-calendar-check-o fa-3x text-dark"></span>
+                                    <h3>All</h3>
+                                    <h3>Histories</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="m-3">
+                            <a href="{% url 'withdraw' %}">
+                                <div class="text-center alert-success p-3 bg-gradient">
+                                    <span class="fa fa-commenting-o fa-3x text-dark"></span>
+                                    <h3>Balance</h3>
+                                    <h3>Withdraw</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,65 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-12 bg-dark">
+                <h3 class="text-light text-capitalize text-center">
+                    Withdraw
+                </h3>
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="col-md-6 withdraw">
+                            <h3 class="text-light text-capitalize text-left">
+                                Amount to Withdraw
+                            </h3>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div>
+                                    <p class="text-warning">Amount:</p>
+                                    <input type="text" placeholder="Enter Amount" name="amount" class="form-control">
+                                </div>
+                                <!-- <div>
+                                    <p class="text-warning">Pin:</p>
+                                    <input type="password" placeholder="Enter your Pin" name="pin" class="form-control">
+                                </div> -->
+                                <div class="m-3">
+                                    <button class="btn btn-primary">Withdraw</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="text-light text-capitalize text-left">
+                                Receiver Account
+                            </h3>
+                            <span class="text-capitalize text-warning">Bank Account</span>
+                            <p class="text-capitalize text-light">
+                                Bank Name: {{user.bank_name}} <br>
+                                User Name: {{user.bank}} <br>
+                                Account Number: {{user.bank_number}} <br>
+                                Account Type: {{user.type}} <br>
+                            </p>
+                        </div>
+                        {% for message in messages %}
+                        <div class="col-md-12 m-3">
+                            <div class="col-md-12 alert-warning p-3 text-center">
+                                <p>{{message}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}

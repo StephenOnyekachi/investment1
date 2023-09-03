@@ -1,0 +1,81 @@
+
+{% extends 'bases.html' %}
+{% load static %}
+<title>home</title>
+{% block content %}
+
+<div>
+    <div class="col-md-12 p-3 bg-img">
+        <div class="blow">
+            <!-- <img src="styles/img/1.jpg" alt=""> -->
+        </div>
+        <div class="containner p-3">
+            <div class="p-3 col-md-12 bg-dark">
+              <div class="col-md-12">
+                <h3 class="text-light text-capitalize text-left">
+                  <i class="fa fa-user-o fa-1x text-light">
+                    <span style="position: relative;font-size:10px;top:-15px;">{{user.count}}</span>
+                  </i>
+                </h3>
+              </div>
+                <div class="col-md-12 p-3">
+                    <table class="table">
+                      <thead>
+                        <tr class="">
+                          <th scope="col" class="text-center text-warning">User Name</th>
+                          <th scope="col" class="text-center text-warning">Plan</th>
+                          <th scope="col" class="text-center text-warning">Last Seen</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for user in user %}
+                        <tr>
+                          <td class="text-center text-capitalize text-light">{{ user.username }}</td>
+                          <td class="text-center text-capitalize text-light">{{ user.plan }}</td>
+                          <td class="text-center text-capitalize text-light">{{ user.last_login }}</td>
+                        </tr>
+                        <tr>
+                          <td class="text-center">
+                            <a href="{% url 'edituser' user.id %}" class="btn btn-success">
+                              Edit
+                              <i class="fa fa-clone fa-1x"></i>
+                            </a>
+                          </td>
+                          <td class="text-center">
+                            {% if user.block %}
+                            <a href="{% url 'block' user.id %}" class="btn btn-warning">
+                              Unblock
+                              <i class="fa fa-trash fa-1x"></i>
+                            </a>
+                            {% else %}
+                            <a href="{% url 'block' user.id %}" class="btn btn-warning">
+                              Block
+                              <i class="fa fa-trash fa-1x"></i>
+                            </a>
+                            {% endif %}
+                          </td>
+                          <td class="text-center">
+                            <a href="{% url 'deleteuser' user.id %}" class="btn btn-danger">
+                              Delete
+                              <i class="fa fa-trash fa-1x"></i>
+                            </a>
+                          </td>
+                          <td class="text-center">
+                            <!-- <a href="delete.html" class="btn btn-danger">
+                              Delete
+                              <i class="fa fa-trash fa-1x"></i>
+                            </a> -->
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}
+
